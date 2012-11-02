@@ -1,6 +1,6 @@
-#include "image_cache.h"
+#include "image_cache.hpp"
 #include <exception>
-#include "f_exception.h"
+#include "f_exception.hpp"
 #include <iostream>
 #include <fstream>
 
