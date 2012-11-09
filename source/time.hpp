@@ -20,6 +20,8 @@ public:
 		now = time(0);
 		localtime_s(&localTime,&now);
 		string tempStr = asctime(&localTime);
+		//asctime_s(tempStr,&localTime);
+
 		tempStr.erase(tempStr.end()-1);
 		tempStr.append(" | ");
 		return tempStr;

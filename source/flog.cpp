@@ -5,12 +5,12 @@
 namespace ft
 {
 
-
+Flog* Flog::pInstance = NULL;
 Flog::Flog()
 {
 	bool logTime = false;
 	int logMode = LogMode::CONSOLE;
-	string logFile = "_default_.log";
+	string logFile = "default.log";
 	file = new ofstream;
 
 	console.color = LogColor::WHITE;
@@ -19,11 +19,6 @@ Flog::Flog()
 
 }
 
-Flog& Flog::getInstance()
-{
-		static Flog flog;
-		return flog;
-}
 
 void Flog::openLog(bool append)
 {
@@ -41,6 +36,7 @@ void Flog::openLog(bool append)
 }
 void Flog::closeLog()
 {
+	if(file->is_open())	
 		file->close();
 }
 
